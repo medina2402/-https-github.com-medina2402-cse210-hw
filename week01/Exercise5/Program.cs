@@ -1,7 +1,22 @@
 using System;
 
-internal class NewBaseType
+class Program
 {
+    static void Main(string[] args)
+    {
+        Welcome();
+
+        string name = GetName();
+        int number = GetNumber();
+
+        Result(name, Square(number));
+    }
+
+    static void Welcome()
+    {
+        Console.WriteLine("Welcome!");
+    }
+
     static string GetName()
     {
         Console.Write("Enter your name: ");
@@ -13,32 +28,14 @@ internal class NewBaseType
         Console.Write("Enter a number: ");
         return int.Parse(Console.ReadLine());
     }
-    static void Main(string[] args)
-    {
-        Welcome();
-
-        string name = GetName();
-        int number = GetNumber();
-
-        Result(name, Square(number));
-    }
-
-    static void Result(string name, int square)
-    {
-        Console.WriteLine($"{name}, your number squared is {square}.");
-    }
 
     static int Square(int number)
     {
         return number * number;
     }
 
-    static void Welcome()
+    static void Result(string name, int square)
     {
-        Console.WriteLine("Welcome!");
+        Console.WriteLine($"{name}, your number squared is {square}.");
     }
-}
-
-class Program : NewBaseType
-{
 }
